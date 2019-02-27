@@ -15,6 +15,7 @@
 		C718155C2226E15C002596A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C718155A2226E15C002596A6 /* LaunchScreen.storyboard */; };
 		C71815672226E15C002596A6 /* UATuberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71815662226E15C002596A6 /* UATuberTests.swift */; };
 		C71815722226E15C002596A6 /* UATuberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71815712226E15C002596A6 /* UATuberUITests.swift */; };
+		C71815832226ED20002596A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71815822226ED20002596A6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C718156D2226E15C002596A6 /* UATuberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UATuberUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71815712226E15C002596A6 /* UATuberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UATuberUITests.swift; sourceTree = "<group>"; };
 		C71815732226E15C002596A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C71815822226ED20002596A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +101,9 @@
 		C718154D2226E15B002596A6 /* UATuber */ = {
 			isa = PBXGroup;
 			children = (
-				C718154E2226E15B002596A6 /* AppDelegate.swift */,
-				C71815502226E15B002596A6 /* ViewController.swift */,
-				C71815522226E15B002596A6 /* Main.storyboard */,
-				C71815582226E15C002596A6 /* Assets.xcassets */,
-				C718155A2226E15C002596A6 /* LaunchScreen.storyboard */,
-				C718155D2226E15C002596A6 /* Info.plist */,
-				C71815552226E15B002596A6 /* UATuber.xcdatamodeld */,
+				C71815802226EBEF002596A6 /* Storyboards */,
+				C71815812226EBFD002596A6 /* Sources */,
+				C718157F2226EBE5002596A6 /* Resources */,
 			);
 			path = UATuber;
 			sourceTree = "<group>";
@@ -126,6 +124,35 @@
 				C71815732226E15C002596A6 /* Info.plist */,
 			);
 			path = UATuberUITests;
+			sourceTree = "<group>";
+		};
+		C718157F2226EBE5002596A6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C71815582226E15C002596A6 /* Assets.xcassets */,
+				C718155D2226E15C002596A6 /* Info.plist */,
+				C71815552226E15B002596A6 /* UATuber.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C71815802226EBEF002596A6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C71815522226E15B002596A6 /* Main.storyboard */,
+				C718155A2226E15C002596A6 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C71815812226EBFD002596A6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C718154E2226E15B002596A6 /* AppDelegate.swift */,
+				C71815502226E15B002596A6 /* ViewController.swift */,
+				C71815822226ED20002596A6 /* Constants.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +289,7 @@
 				C71815572226E15B002596A6 /* UATuber.xcdatamodeld in Sources */,
 				C71815512226E15B002596A6 /* ViewController.swift in Sources */,
 				C718154F2226E15B002596A6 /* AppDelegate.swift in Sources */,
+				C71815832226ED20002596A6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
