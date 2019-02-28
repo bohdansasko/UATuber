@@ -24,6 +24,9 @@
 		C71815902226F932002596A6 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718158F2226F932002596A6 /* TabModel.swift */; };
 		C71815912226F932002596A6 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718158F2226F932002596A6 /* TabModel.swift */; };
 		C71815922226F932002596A6 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718158F2226F932002596A6 /* TabModel.swift */; };
+		C729E814222831AB00DD129B /* TablePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C729E813222831AA00DD129B /* TablePage.swift */; };
+		C729E8162228323500DD129B /* PageController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C729E8152228323500DD129B /* PageController+UI.swift */; };
+		C729E81B222838C200DD129B /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = C729E81A222838C200DD129B /* Structures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		C71815892226F32E002596A6 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		C718158B2226F3A2002596A6 /* PageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 		C718158F2226F932002596A6 /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
+		C729E813222831AA00DD129B /* TablePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePage.swift; sourceTree = "<group>"; };
+		C729E8152228323500DD129B /* PageController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PageController+UI.swift"; sourceTree = "<group>"; };
+		C729E81A222838C200DD129B /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +168,7 @@
 			children = (
 				C718154E2226E15B002596A6 /* AppDelegate.swift */,
 				C71815822226ED20002596A6 /* Constants.swift */,
+				C729E81A222838C200DD129B /* Structures.swift */,
 				C71815862226F272002596A6 /* Pages */,
 			);
 			path = Sources;
@@ -170,10 +177,10 @@
 		C71815862226F272002596A6 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				C71815892226F32E002596A6 /* Page.swift */,
 				C71815932226F948002596A6 /* PageController */,
-				C71815502226E15B002596A6 /* HomePage.swift */,
-				C71815872226F319002596A6 /* TrendingPage.swift */,
+				C729E8192228361400DD129B /* General */,
+				C729E8172228360100DD129B /* Home */,
+				C729E8182228360900DD129B /* Trending */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -183,8 +190,34 @@
 			children = (
 				C718158F2226F932002596A6 /* TabModel.swift */,
 				C718158B2226F3A2002596A6 /* PageController.swift */,
+				C729E8152228323500DD129B /* PageController+UI.swift */,
 			);
 			path = PageController;
+			sourceTree = "<group>";
+		};
+		C729E8172228360100DD129B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C71815502226E15B002596A6 /* HomePage.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C729E8182228360900DD129B /* Trending */ = {
+			isa = PBXGroup;
+			children = (
+				C71815872226F319002596A6 /* TrendingPage.swift */,
+			);
+			path = Trending;
+			sourceTree = "<group>";
+		};
+		C729E8192228361400DD129B /* General */ = {
+			isa = PBXGroup;
+			children = (
+				C71815892226F32E002596A6 /* Page.swift */,
+				C729E813222831AA00DD129B /* TablePage.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,11 +351,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C729E814222831AB00DD129B /* TablePage.swift in Sources */,
 				C71815572226E15B002596A6 /* UATuber.xcdatamodeld in Sources */,
 				C71815902226F932002596A6 /* TabModel.swift in Sources */,
 				C71815512226E15B002596A6 /* HomePage.swift in Sources */,
 				C71815882226F319002596A6 /* TrendingPage.swift in Sources */,
 				C718158C2226F3A2002596A6 /* PageController.swift in Sources */,
+				C729E8162228323500DD129B /* PageController+UI.swift in Sources */,
+				C729E81B222838C200DD129B /* Structures.swift in Sources */,
 				C718158A2226F32E002596A6 /* Page.swift in Sources */,
 				C718154F2226E15B002596A6 /* AppDelegate.swift in Sources */,
 				C71815832226ED20002596A6 /* Constants.swift in Sources */,

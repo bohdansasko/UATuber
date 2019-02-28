@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TrendingPage.swift
 //  UATuber
 //
 //  Created by Bogdan Sasko on 2/27/19.
@@ -8,9 +8,10 @@
 
 import UIKit
 
-class HomePage: Page {
+class TrendingPage: TablePage {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gray
+        
+        title = "Trending"
     }
 }
