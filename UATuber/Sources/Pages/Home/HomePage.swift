@@ -9,25 +9,35 @@
 import UIKit
 
 class HomePage: TablePage {
-    var videos: [Video] = [
-        Video(title: "3 ideas which are changed your life", image: nil, url: "https://youtube.com", postedTime: 0, countReviews: 14000, channel: VideoChannel(name: "Glommy Voice", image: nil)),
-        Video(title: "Carlsen scoffs at the opening", image: nil, url: "https://youtube.com", postedTime: 0, countReviews: 3251, channel: VideoChannel(name: "Chess School", image: nil))
-    ]
+    let viewModel = HomeViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Home"
+        title = viewModel.pageTitle
+        viewModel.registerRequiredCells(for: tableView)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return videos.count
+        return viewModel.numberOfRows(in: section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return VideoCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.cellId) as? VideoCell else {
+            return UITableViewCell()
+        }
+        cell.viewModel = viewModel.getCellViewModel(for: indexPath.item)
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.textLabel?.text = videos[indexPath.item].title
+        guard let videoCell = cell as? VideoCell else {
+            return
+        }
+        videoCell.configure()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return viewModel.rowHeight
     }
 }
