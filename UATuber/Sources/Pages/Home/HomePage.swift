@@ -15,7 +15,7 @@ class HomePage: TablePage {
         super.viewDidLoad()
         
         title = viewModel.pageTitle
-        viewModel.registerRequiredCells(for: tableView)
+        viewModel.configureTableView(for: tableView)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +38,10 @@ class HomePage: TablePage {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return viewModel.rowHeight
+        return viewModel.getRowHeight(viewWidth: view.frame.width)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.onDidSelectRow(at: indexPath)
     }
 }

@@ -6,12 +6,15 @@
 //  Copyright © 2019 vinso. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct VideoCellViewModel {
-    let video: Video
+    let image: UIImage?
+    let title: String
+    let selectionStyle: UITableViewCell.SelectionStyle = .none
     
     init(video: Video) {
-        self.video = video
+        image = video.image
+        title = video.title
     }
 }

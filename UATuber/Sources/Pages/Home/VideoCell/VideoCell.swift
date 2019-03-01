@@ -9,36 +9,31 @@
 import UIKit
 
 class VideoCell: UITableViewCell {
-    var viewModel: VideoCellViewModel?
+    var viewModel: VideoCellViewModel!
     
-    let imgView: UIView = {
-        let view = UIView()
+    let imgView: UIImageView = {
+        let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
-        return view
-    }()
-    
-    let channelAvatar: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 12
-        view.layer.masksToBounds = true
+        view.contentMode = .scaleToFill
+        view.image = UIImage(named: "video1")
         return view
     }()
     
     let titleView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .green
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         return view
     }()
-
-    let subtitleView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .green
-        return view
+    
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
     }()
 
     
@@ -49,25 +44,19 @@ class VideoCell: UITableViewCell {
         imgView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         imgView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         imgView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        imgView.heightAnchor.constraint(equalToConstant: 180).isActive = true
-        
-        addSubview(channelAvatar)
-        channelAvatar.widthAnchor.constraint(equalToConstant: 26).isActive = true
-        channelAvatar.heightAnchor.constraint(equalTo: channelAvatar.widthAnchor).isActive = true
-        channelAvatar.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: 4).isActive = true
-        channelAvatar.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
+        imgView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
         addSubview(titleView)
-        titleView.topAnchor.constraint(equalTo: channelAvatar.topAnchor).isActive = true
-        titleView.leftAnchor.constraint(equalTo: channelAvatar.rightAnchor, constant: 4).isActive = true
-        titleView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
-        titleView.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        titleView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        titleView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        titleView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        titleView.heightAnchor.constraint(equalToConstant: 36).isActive = true
         
-        addSubview(subtitleView)
-        subtitleView.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 2).isActive = true
-        subtitleView.leftAnchor.constraint(equalTo: titleView.leftAnchor).isActive = true
-        subtitleView.rightAnchor.constraint(equalTo: titleView.rightAnchor).isActive = true
-        subtitleView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        titleView.addSubview(titleLabel)
+        titleLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 0).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: titleView.leftAnchor, constant: 10).isActive = true
+        titleLabel.rightAnchor.constraint(equalTo: titleView.rightAnchor, constant: -5).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 0).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -75,6 +64,8 @@ class VideoCell: UITableViewCell {
     }
     
     func configure() {
-        // TODO: setup content
+        imgView.image = viewModel.image
+        titleLabel.text = viewModel.title
+        selectionStyle = viewModel.selectionStyle
     }
 }

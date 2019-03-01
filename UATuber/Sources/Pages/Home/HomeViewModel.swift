@@ -10,13 +10,13 @@ import UIKit
 
 struct HomeViewModel {
     private let videos: [Video] = [
-        Video(title: "3 ideas which are changed your life", image: UIImage(named: "goat_on_green_field"), url: "https://youtube.com", postedTime: 0, countReviews: 14000, channel: VideoChannel(name: "Glommy Voice", image: UIImage(named: "goat_on_green_field"))),
-        Video(title: "Carlsen scoffs at the opening", image: UIImage(named: "goat_on_green_field"), url: "https://youtube.com", postedTime: 0, countReviews: 3251, channel: VideoChannel(name: "Chess School", image: UIImage(named: "goat_on_green_field")))
+        Video(title: "3 ideas which are changed your life", image: UIImage(named: "video1"), url: "https://youtube.com"),
+        Video(title: "Carlsen scoffs at the opening", image: UIImage(named: "video2"), url: "https://youtube.com"),
+        Video(title: "Carlsen scoffs at the opening", image: UIImage(named: "video3"), url: "https://youtube.com")
     ]
     
     let pageTitle = "Home"
     let cellId = "cellId"
-    let rowHeight: CGFloat = 260
     
     func numberOfRows(in section: Int) -> Int {
         return videos.count
@@ -26,7 +26,16 @@ struct HomeViewModel {
         return VideoCellViewModel(video: videos[row])
     }
     
-    func registerRequiredCells(for tableView: UITableView) {
+    func configureTableView(for tableView: UITableView) {
         tableView.register(VideoCell.self, forCellReuseIdentifier: cellId)
+        tableView.separatorStyle = .none
+    }
+    
+    func getRowHeight(viewWidth: CGFloat) -> CGFloat {
+        return (viewWidth/320) * 180
+    }
+    
+    func onDidSelectRow(at indexPath: IndexPath) {
+        print("selected row \(indexPath)")
     }
 }

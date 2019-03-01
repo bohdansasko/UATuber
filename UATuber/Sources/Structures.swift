@@ -17,8 +17,5 @@ struct Video {
     let title: String
     let image: UIImage?
     let url: String
-    let postedTime: TimeInterval
-    let countReviews: Int64
-    let channel: VideoChannel
 }
 
